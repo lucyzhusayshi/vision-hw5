@@ -21,6 +21,19 @@ def train(net, dataloader, optimizer, criterion, epoch):
 
         # forward + backward + optimize
         outputs = net(inputs)
+        # labels = 
+        # lbls = []
+        # for j in range(0,4):
+        #     label = []
+        #     for k in range(0,10):
+        #         if k == labels[j]:
+        #             label += [1.0]
+        #         else:
+        #             label += [0]
+        #     lbls += [label]
+
+        # lbls = torch.tensor(lbls, dtype = torch.float)
+        # loss = criterion(outputs, lbls)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -74,11 +87,13 @@ def test(net, dataloader, tag=''):
             tag, dataloader.classes[i], 100 * class_correct[i] / class_total[i]))
 
 def main():
-
+    # cuda = torch.device('cuda')
+    # torch.set_default_tensor_type('torch.cuda.FloatTensor')
     args = argParser()
 
     cifarLoader = CifarLoader(args)
     net = args.model()
+    # net.cuda()
     print('The log is recorded in ')
     print(net.logFile.name)
 

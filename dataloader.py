@@ -10,6 +10,12 @@ class CifarLoader(object):
 		transform = transforms.Compose(
 		    [
 		     # TODO: Add data augmentations here
+			 
+			#  transforms.RandomOrder(
+			# 	 [transforms.RandomVerticalFlip(),
+			# 	 transforms.RandomGrayscale(),
+			# 	 transforms.ColorJitter()]
+			#  ),
 		     transforms.ToTensor(),
 		     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 		     ])
