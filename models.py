@@ -23,8 +23,8 @@ class BaseModel(nn.Module):
     def criterion(self):
         #  TODO: try mean squared loss
 
-        # return nn.MSELoss()
-        return nn.CrossEntropyLoss()
+        return nn.MSELoss()
+        # return nn.CrossEntropyLoss()
 
     def optimizer(self):
         return optim.SGD(self.parameters(), lr=0.001)
@@ -71,6 +71,10 @@ class BoringNet(BaseModel):
         # x = self.fc2(x)
 
         # with RELU activations
+        # x = F.relu(self.fc1(x))
+        # x = F.relu(self.fc2(x))
+
+        # with LRELU activations
         x = F.leaky_relu(self.fc1(x))
         x = F.leaky_relu(self.fc2(x))
 

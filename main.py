@@ -21,20 +21,20 @@ def train(net, dataloader, optimizer, criterion, epoch):
 
         # forward + backward + optimize
         outputs = net(inputs)
-        # labels = 
-        # lbls = []
-        # for j in range(0,4):
-        #     label = []
-        #     for k in range(0,10):
-        #         if k == labels[j]:
-        #             label += [1.0]
-        #         else:
-        #             label += [0]
-        #     lbls += [label]
 
-        # lbls = torch.tensor(lbls, dtype = torch.float)
-        # loss = criterion(outputs, lbls)
-        loss = criterion(outputs, labels)
+        lbls = []
+        for j in range(0,4):
+            label = []
+            for k in range(0,10):
+                if k == labels[j]:
+                    label += [1.0]
+                else:
+                    label += [0]
+            lbls += [label]
+
+        lbls = torch.tensor(lbls, dtype = torch.float)
+        loss = criterion(outputs, lbls)
+        # loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
 

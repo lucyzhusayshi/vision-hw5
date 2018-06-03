@@ -43,10 +43,11 @@
 # python3 main.py --model CoolNet --epochs 150
 # python3 main.py --model CoolNet_v7 --epochs 150
 
-python3 main.py --epochs 200 --model CoolNet --lr 0.01
-python3 main.py --epochs 200 --model CoolNet_v7 --lr 0.01
+# python3 main.py --epochs 200 --model CoolNet --lr 0.01
+# python3 main.py --epochs 200 --model CoolNet_v7 --lr 0.01
 
 # python3 main.py --epochs 200 --model CoolNet --lr 0.01
 # python3 main.py --epochs 200 --model CoolNet_v7 --lr 0.01
 
-python3 main.py --epochs 200 --model CoolNet --lr 0.01
+# python3 main.py --epochs 200 --model CoolNet --lr 0.01
+python3 main.py --epochs 200 --model CoolNet_v7 --lr 0.01
